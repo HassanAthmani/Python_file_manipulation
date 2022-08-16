@@ -8,4 +8,10 @@ with open(filepath) as fp:
      line = fp.readline()    
      for x in fp: 
          f=open("testFinal_json.json","a+")
-         f.write("{\"keywords\":""\""+x.strip()+"\",\n \"limit\": 5,\n \"print_urls\":true},\n")
+         x = {
+              "keywords":x.strip(),
+              "limit": 5,
+              "print_urls": true              
+         }
+          f.write(f"{x}, \n")
+         # f.write("{\"keywords\":""\""+x.strip()+"\",\n \"limit\": 5,\n \"print_urls\":true},\n")
